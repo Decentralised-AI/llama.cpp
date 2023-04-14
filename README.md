@@ -272,13 +272,11 @@ cadaver, cauliflower, cabbage (vegetable), catalpa (tree) and Cailleach.
 
 - Obtain the `gpt4all-lora-quantized.bin` model
 - It is distributed in the old `ggml` format which is now obsoleted
-- You have to convert it to the new format using [./convert-gpt4all-to-ggml.py](./convert-gpt4all-to-ggml.py). You may also need to
-convert the model from the old format to the new format with [./migrate-ggml-2023-03-30-pr613.py](./migrate-ggml-2023-03-30-pr613.py):
+- You have to convert it to the new format using `convert.py`:
 
-  ```bash
-  python3 convert-gpt4all-to-ggml.py models/gpt4all-7B/gpt4all-lora-quantized.bin ./models/tokenizer.model
-  python3 migrate-ggml-2023-03-30-pr613.py models/gpt4all-7B/gpt4all-lora-quantized.bin models/gpt4all-7B/gpt4all-lora-quantized-new.bin
-  ```
+```bash
+python3 convert.py models/gpt4all-7B/gpt4all-lora-quantized.bin
+```
 
 - You can now use the newly generated `gpt4all-lora-quantized-new.bin` model in exactly the same way as all other models
 - The original model is saved in the same folder with a suffix `.orig`
